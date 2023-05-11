@@ -28,7 +28,7 @@ $text-color-dark: #ffffff;
 /*light*/
 $primary-color: #4c566a;
 $secondary-color: #5e81ac;
-$accent-color: #ffd700;
+$accent-color: #ffa600;
 $background-color: #ffffff;
 $text-color: #000000;
 
@@ -62,4 +62,32 @@ body {
 .container {
   width: 80%;
   margin: 0 auto;
+}
+
+.card-group{
+  @apply flex flex-col w-full mx-auto my-10 ;
+}
+.card{
+  @apply flex flex-col w-[66%] mx-auto my-10 p-3 rounded-xl ;
+  background-color: $primary-color-dark;
+  color:#fff;
+}
+.title{
+  @apply text-2xl w-full bg-green-400 rounded-lg mb-3 p-3 text-center;
+  color: $primary-color-dark;
+  font-weight: 800;
+
+}
+.hints{
+  @apply mt-3 p-3 rounded-lg;
+  background-color:$accent-color ;
+  color: $primary-color-dark;
+}
+.short-details{
+  @apply my-2 ;
+}
+.card-btn{
+  @apply mt-10 p-3 w-full rounded-lg;
+  background-color:rgb(57, 95, 211);;
+  color:#fff;
 }
