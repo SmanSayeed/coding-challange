@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark Version:
+
+Primary Color: #0E141B (Dark Blue/Black)
+Secondary Color: #64FFDA (Turquoise)
+Accent Color: #FFD700 (Gold)
+Background Color: #000000 (Black)
+Text Color: #FFFFFF (White)
+Light Version:
+
+Primary Color: #4C566A (Dark Gray)
+Secondary Color: #5E81AC (Blue Gray)
+Accent Color: #FFD700 (Gold)
+Background Color: #FFFFFF (White)
+Text Color: #000000 (Black) */
+
+/*dark*/
+$primary-color-dark: #0e141b;
+$secondary-color-dark: #64ffda;
+$accent-color-dark: #ffd700;
+$background-color-dark: #27296a;
+$text-color-dark: #ffffff;
+
+/*light*/
+$primary-color: #4c566a;
+$secondary-color: #5e81ac;
+$accent-color: #ffd700;
+$background-color: #ffffff;
+$text-color: #000000;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  overflow: auto;
+  box-sizing: border-box;
+  font-family: "Chakra Petch", sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background-color: $background-color-dark;
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    ) */
+  /* rgb(var(--background-start-rgb)); */
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
