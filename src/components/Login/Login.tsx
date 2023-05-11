@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useEffect, useState } from "react";
 // import firebase from '@/firebase/firebase';
@@ -27,11 +28,11 @@ const Login = (props: Props) => {
   const { authUser, isLoading } = useAuth();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!isLoading && authUser) {
-      router.push("/");  
-    }
-  }, [isLoading,authUser]);
+  // useEffect(() => {
+  //   if (!isLoading && authUser) {
+  //     router.push("/");  
+  //   }
+  // }, [isLoading,authUser]);
 
   const handleSignIn = async () => {
     const user = await signInWithPopup(auth, provider);

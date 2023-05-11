@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { GithubAuthProvider } from "firebase/auth";
 import Login from "../Login/Login";
