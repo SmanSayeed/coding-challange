@@ -1,5 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
+import allicons from "@/services/constants/icon-constants";
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { useState } from "react";
 // import firebase from '@/firebase/firebase';
 import { useAuth } from "@/firebase/auth";
@@ -11,7 +13,7 @@ const provider = new GithubAuthProvider();
 
 type Props = {};
 
-const Login = (props: Props) => {
+const Github = (props: Props) => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [uid, setUid] = useState(null);
@@ -28,20 +30,18 @@ const Login = (props: Props) => {
     const user = await signInWithPopup(auth, provider);
     console.log(user);
   };
-  return isLoading || (!authUser && isLoading) ? (
-    <>Loading</>
-  ) : (
-    <div>
-      {
-        <button
-          className="text-lg my-10 bg-white p-5  rounded-lg w-full"
-          onClick={() => handleSignIn()}
-        >
-          Join with github
-        </button>
-      }
+
+  return (
+    <div
+      className="flex justify-center items-center border border-1 border-green-500 px-3 rounded-lg font-extrabold cursor-pointer hover:bg-white hover:text-green-500 transition duration-300 ease-in-out delay-100"
+      onClick={() => handleSignIn()}
+    >
+      <p className="hidden lg:block ">Login with github</p>
+      <div className="mobile-nav-icon text-2xl text-green-500 p-2 rounded-lg ">
+        {allicons.github}
+      </div>
     </div>
   );
 };
 
-export default Login;
+export default Github;

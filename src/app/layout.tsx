@@ -1,14 +1,14 @@
+import Layout from "@/components/Layout/Layout";
 import { AuthUserProvider } from "@/firebase/auth";
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
+import { siteName, siteTagline } from "@/services/constants/constants";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Coding Challenge",
-  description: "!dare to code",
+  title: siteName,
+  description: siteTagline,
 };
 
 export default function RootLayout({
@@ -18,14 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <AuthUserProvider>
- <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        {children} 
-        <Footer />
-      </body>
-    </html>
+      <Layout>{children}</Layout>
     </AuthUserProvider>
-   
   );
 }
