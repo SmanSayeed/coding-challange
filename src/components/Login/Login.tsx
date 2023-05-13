@@ -2,8 +2,8 @@
 "use client";
 import { useState } from "react";
 // import firebase from '@/firebase/firebase';
-import { useAuth } from "@/firebase/auth";
-import { auth } from "@/firebase/firebase";
+import { useAuth } from "@/lib/firebase/auth";
+import { auth } from "@/lib/firebase/firebase";
 import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { useRouter } from "next/navigation";
 const date = new Date();
@@ -26,7 +26,7 @@ const Login = (props: Props) => {
 
   const handleSignIn = async () => {
     const user = await signInWithPopup(auth, provider);
-    console.log(user);
+    console.log("login user = ",user);
   };
   return isLoading || (!authUser && isLoading) ? (
     <>Loading</>

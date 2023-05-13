@@ -2,20 +2,9 @@
 "use client";
 
 import Hero from "@/components/Hero/Hero";
-import { useAuth } from "@/firebase/auth";
+import { useAuth } from "@/lib/firebase/auth";
 import { useEffect, useState } from "react";
 export default function Home() {
-  const { authUser, isLoading } = useAuth();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    console.log(authUser);
-    if (!isLoading && authUser) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, []);
   return (
     <>
       {/* <main className="flex min-h-screen flex-col items-center justify-between "> */}

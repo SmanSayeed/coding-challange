@@ -2,7 +2,7 @@
 "use client";
 import { useState } from "react";
 // import firebase from '@/firebase/firebase';
-import { useAuth } from "@/firebase/auth";
+import { useAuth } from "@/lib/firebase/auth";
 import { GithubAuthProvider } from "firebase/auth";
 import { useRouter } from "next/navigation";
 const provider = new GithubAuthProvider();

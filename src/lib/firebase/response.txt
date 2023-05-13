@@ -1,3 +1,48 @@
+data push =  {
+  uid: 'XG8uWz8Y0NZdkeB2oGcee4fHi402',
+  email: '786saadman@gmail.com',
+  username: 'Saadman Sayeed',
+  photoURL: 'https://avatars.githubusercontent.com/u/227525
+  phoneNumber: null,
+  providerData: [
+    {
+      providerId: 'github.com',
+      uid: '22752556',
+      displayName: 'Saadman Sayeed',
+      email: '786saadman@gmail.com',
+      phoneNumber: null,
+      photoURL: 'https://avatars.githubusercontent.com/u/22
+  ],
+  reloadUserInfo: {
+    localId: 'XG8uWz8Y0NZdkeB2oGcee4fHi402',
+    email: '786saadman@gmail.com',
+    displayName: 'Saadman Sayeed',
+    photoUrl: 'https://avatars.githubusercontent.com/u/22752556?v=4',
+    emailVerified: false,
+    providerUserInfo: [ [Object] ],
+    validSince: '1683830401',
+    lastLoginAt: '1683994457024',
+    createdAt: '1683830401592',
+    screenName: 'SmanSayeed',
+    lastRefreshAt: '2023-05-13T16:14:17.024Z'
+  }
+}
+
+
+createdAt
+: 
+"1683830401592"
+creationTime
+: 
+"Thu, 11 May 2023 18:40:01 GMT"
+lastLoginAt
+: 
+"1683994883706"
+lastSignInTime
+: 
+"Sat, 13 May 2023 16:21:23 GMT"
+
+
 user
 : 
 UserImpl

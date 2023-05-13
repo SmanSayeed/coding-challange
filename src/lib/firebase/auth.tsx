@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { createContext, useContext, useState, useEffect } from "react";
 import { onAuthStateChanged, signOut as authSignOut } from "firebase/auth";
@@ -6,42 +7,41 @@ const AuthUserContext = createContext({
   authUser: null,
   isLoading: true,
 });
-
 export default function useFirebaseAuth():any {
   const [authUser, setAuthUser] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
-
   const clear = () => {
     setAuthUser(null);
     setIsLoading(false);
   };
-
   const authStateChanged = async (user: any) => {
     setIsLoading(true);
     if (!user) {
       clear();
       return;
     }
-
     setAuthUser({
       uid: user.uid,
       email: user.email,
       username: user.displayName,
-      avatar:user.avatar
+      photoURL:user.photoURL,
+      phoneNumber:user.phoneNumber,
+      providerData:user.providerData[0].providerId,
+      reloadUserInfo:user.reloadUserInfo.screenName,
+      creationTime:user.reloadUserInfo.lastRefreshAt,
+      createdAt:user.reloadUserInfo.createdAt,
     });
     setIsLoading(false);
   };
-
   const signOut = ():any => {
     authSignOut(auth).then(() => {
       clear();
     });
   };
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, authStateChanged);
     return () => unsubscribe();
-  });
+  },[]);
   return {
     authUser,
     isLoading,

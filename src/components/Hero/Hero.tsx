@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import { useAuth } from "@/firebase/auth";
+import { useAuth } from "@/lib/firebase/auth";
 import { useEffect, useState } from "react";
 import Login from "../Login/Login";
 import Logout from "../Logout/Logout";
@@ -8,17 +8,7 @@ import Logout from "../Logout/Logout";
 type Props = {};
 
 const Hero = (props: Props) => {
-  const { authUser, isLoading } = useAuth();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    console.log(authUser);
-    if (!isLoading && authUser) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, []);
+ 
 
   return (
     <>
