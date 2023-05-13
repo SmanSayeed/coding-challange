@@ -36,8 +36,8 @@ const Github = (props: Props) => {
       className="bordered-btn"
       onClick={() => handleSignIn()}
     >
-      <p className="hidden lg:block ">Login with github</p>
-      <div className="mobile-nav-icon text-2xl text-green-500 p-2 rounded-lg ">
+      <p className="hidden lg:block neon-green-text ">Login with github</p>
+      <div className="mobile-nav-icon text-2xl text-green-500 p-2 rounded-lg neon-green-text ">
         {allicons.github}
       </div>
     </div>

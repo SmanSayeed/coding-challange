@@ -120,4 +120,27 @@ body {
   @apply flex justify-center items-center border border-green-500 px-3 rounded-lg font-extrabold cursor-pointer hover:bg-white hover:text-green-500 transition duration-300 ease-in-out delay-100;
 }
 
+.neon-green-text {
+  color: #00ff00; /* Neon green text color */
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Multiple layers of shadow */
+  animation: neon-glow 3s linear infinite alternate;
+}
+
+@keyframes neon-glow {
+  0% {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  }
+  50% {
+    color: #ffff00;
+    text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00;
+  }
+  100% {
+    color: #f3152f;
+    text-shadow: 0 0 10px #f3152f, 0 0 20px #f3152f, 0 0 30px #f3152f;
+  }
+}
+
+
+
 // hidden lg:flex 
