@@ -22,65 +22,20 @@ const Hero = (props: Props) => {
 
   return (
     <>
-      <div className="mt-5 w-full text-white">
-        <div className="container flex justify-center items-center text-2xl">
-          <div className="bg-black text-green-500 p-4 rounded-lg mt-10 flex justify-center align-center flex-col">
-          
-            <div className="">
-              <p className="text-md underline text-yellow-200 align-center my-5">
-                What is coming soon in this website:
+      <div className="w-[100%] text-white bg-black overflow-hidden">
+          <div className=" text-green-500 p-4 rounded-lg flex justify-center align-center flex-col">
+              <p className="text-2xl  text-yellow-200 align-center ">
+                Are you ready for accepting coding challanges?
               </p>
-              <ul>
-                <li>
-                  <span className="text-md">User login:</span>{" "}
-                  <span className="text-green-300">Done</span>
-                </li>
-                <li>
-                  <span className="text-md">UI UX improvement :</span>{" "}
-                  <span className="text-blue-300">In progress</span>
-                </li>
-
-                <li>
-                  <span className="text-md">User Accept Challange :</span>{" "}
-                  <span className="text-blue-300">In progress</span>
-                </li>
-                <li>
-                  <span className="text-md">
-                    Submit project github and live link :
-                  </span>{" "}
-                  <span className="text-orange-600">Coming soon</span>
-                </li>
-                <li>
-                  <span className="text-md">Challange timeline :</span>{" "}
-                  <span className="text-orange-600">Coming soon</span>
-                </li>
-                <li>
-                  <span className="text-md">Leader board :</span>{" "}
-                  <span className="text-orange-600">Coming soon</span>
-                </li>
-                <li>
-                  <span className="text-md">Project rating :</span>{" "}
-                  <span className="text-orange-600">Coming soon</span>
-                </li>
-                <li>
-                  <span className="text-md">Source code checker :</span>{" "}
-                  <span className="text-orange-600">Coming soon</span>
-                </li>
-                <li>
-                  <span className="text-md">Commenting :</span>{" "}
-                  <span className="text-red-800">Under planning</span>
-                </li>
-                <li>
-                  <span className="text-md">Badge :</span>{" "}
-                  <span className="text-red-800">Under planning</span>
-                </li>
-                <li>
-                  <span className="text-md">Project status sharing :</span>{" "}
-                  <span className="text-red-800">Under planning</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+        </div>
+        <div className=" p-4 ">
+          <ul>
+            <li>First login with your github account</li>
+            <li>Accept a challenge with your skill level</li>
+            <li>Solve the project problem and submit your project live link and github public link</li>
+            <li>Check leader board</li>
+            <li>Share your submission to get review</li>
+          </ul>
         </div>
       </div>
     </>
