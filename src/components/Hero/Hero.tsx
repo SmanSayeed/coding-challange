@@ -25,8 +25,7 @@ const Hero = (props: Props) => {
       <div className="mt-5 w-full text-white">
         <div className="container flex justify-center items-center text-2xl">
           <div className="bg-black text-green-500 p-4 rounded-lg mt-10 flex justify-center align-center flex-col">
-            {!isLoggedIn ? <Login /> : <Logout />}
-            {/* <Login/> <Logout/> */}
+          
             <div className="">
               <p className="text-md underline text-yellow-200 align-center my-5">
                 What is coming soon in this website:

@@ -116,4 +116,8 @@ body {
   }
 }
 
+.bordered-btn{
+  @apply flex justify-center items-center border border-green-500 px-3 rounded-lg font-extrabold cursor-pointer hover:bg-white hover:text-green-500 transition duration-300 ease-in-out delay-100;
+}
+
 // hidden lg:flex 

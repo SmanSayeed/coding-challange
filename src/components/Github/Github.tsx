@@ -33,7 +33,7 @@ const Github = (props: Props) => {
 
   return (
     <div
-      className="flex justify-center items-center border border-1 border-green-500 px-3 rounded-lg font-extrabold cursor-pointer hover:bg-white hover:text-green-500 transition duration-300 ease-in-out delay-100"
+      className="bordered-btn"
       onClick={() => handleSignIn()}
     >
       <p className="hidden lg:block ">Login with github</p>

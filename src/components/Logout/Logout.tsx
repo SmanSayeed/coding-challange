@@ -29,7 +29,7 @@ const Logout = (props: Props) => {
     isLoading || (
       <div>
         <button
-          className="text-lg my-10 bg-white p-5  rounded-lg"
+          className="bordered-btn"
           onClick={signOut}
         >
           Logout

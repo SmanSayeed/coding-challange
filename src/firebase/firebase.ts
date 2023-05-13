@@ -13,7 +13,7 @@ import {getFirestore} from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyCq6maFdfRh9_7BJsx1TruZii3ZtK6bELM",
   authDomain: "coding-challenge-a46ed.firebaseapp.com",
-  projectId: "coding-challenge-a46ed",
+  projectId: "coding-challenge-a46ed",  
   storageBucket: "coding-challenge-a46ed.appspot.com",
   messagingSenderId: "461130461023",
   appId: "1:461130461023:web:660e37e4c8197abee610ea",
