@@ -13,7 +13,8 @@ async function init() {
   try {
     client = await clientPromise
     db = await client.db(mongo_db_name)
-    users = await db.collection(collection_name)
+    users = await db.collection(collection_name).createIndex({ email: 1 }, { unique: true });
+    // await db.collection(collection_name).createIndex({ email: 1 }, { unique: true });
   } catch (error) {
     throw new Error('Failed to connect to the database.')
   }

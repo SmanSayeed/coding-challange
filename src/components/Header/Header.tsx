@@ -13,6 +13,10 @@ import {
 } from "@/app/actions/_userActions";
 import Loader from "../Loader/Loader";
 import Alert from "../Alert/Alert";
+import { resetUser,addUserRedux } from "@/redux/slices/userSlice";
+// import { resetUser, } from "@/redux/features/usersSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+
 type Props = {};
 const Header = (props: Props) => {
   const { authUser, isLoading } = useAuth();
@@ -21,25 +25,29 @@ const Header = (props: Props) => {
   const [userData, setUserData] = useState(authUser);
   const [showAlert, setShowAlert] = useState(false);
 
+  const userReducerData = useAppSelector((state) => state.userReducer);
+  // const dispatch = useAppDispatch();
+
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
+  /*
   async function addUser(data: {}) {
     await createUserAction(data).then((res: any) => {
       console.log("user created res = ", res);
     });
   }
-
   const checkUser = async (email: string) => {
     // return await  findUserByEmailAction(email)
     let user: any;
     await findUserByEmailAction(email).then((resolved) => {
       console.log("printing resolved...");
       console.log("resolved result = ", resolved);
-      user = resolved;
-      setUserData(user.user);
+      user = resolved.user;
+      setUserData(user);
     });
   };
+  */
   const handleSuccess = () => {
     setShowAlert(true);
     setTimeout(() => {
@@ -50,7 +58,8 @@ const Header = (props: Props) => {
   useEffect(() => {
     console.log("user", authUser);
     if (!isLoading && authUser) {
-      checkUser(authUser.email);
+      console.log("User reducer = ",userReducerData);
+      // checkUser(authUser.email);
       setIsLoggedIn(true);
       handleSuccess();
     } else {
@@ -58,18 +67,21 @@ const Header = (props: Props) => {
     }
   }, [isLoading, authUser]);
 
-  useEffect(() => {
-    try {
-      console.log("isUserExist", userData);
-      if (!userData) {
-        addUser(authUser);
-      } else {
-        console.log("welcome back");
-      }
-    } catch (err: any) {
-      console.log("errorroooo = ", err);
-    }
-  }, [userData]);
+  // useEffect(() => {
+  //   try {
+  //     console.log("isUserExist", userData);
+  //     if (!userData) {
+  //       addUser(authUser);
+        
+  //     } else {
+  //       console.log("welcome back");
+  //     }
+  //   } catch (err: any) {
+  //     console.log("errorroooo = ", err);
+  //   }
+  // }, [userData]);
+
+
   if (isLoading)
     return (
       <>

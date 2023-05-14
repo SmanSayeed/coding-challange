@@ -3,6 +3,8 @@ import { AuthUserProvider } from "@/lib/firebase/auth";
 import { siteName, siteTagline } from "@/services/constants/constants";
 import { Inter } from "next/font/google";
 import "./globals.scss";
+import { Provider } from "react-redux";
+import { Providers } from "@/redux/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    <Providers>
     <AuthUserProvider>
       <Layout>{children}</Layout>
     </AuthUserProvider>
+    </Providers>
   );
 }
