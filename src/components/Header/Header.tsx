@@ -45,7 +45,7 @@ const Header = (props: Props) => {
   return (
     <>
       {showAlert && <Alert message="Login Success!" variant="success" />}
-      <header className="overflow-hidden w-full text-white bg-dark border-b border-1 border-green-500  h-20 shrink-0 flex justify-between items-center py-4 px-5 ">
+      <header className="w-full text-white bg-dark border-b border-1 border-green-500  h-20 shrink-0 flex justify-between items-center py-4 px-5 ">
         <div className=" flex justify-start items-center text-xl font-bold text-green-500">
           {siteName}
         </div>

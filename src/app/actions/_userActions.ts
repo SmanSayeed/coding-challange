@@ -1,6 +1,5 @@
 "use server";
 
-import { mongo_db_name } from "@/lib/mongodb/mongodb";
 import { getUserById } from "@/lib/mongodb/usersdb";
 import User from "@/models/usersModel";
 import { statusText, strings } from "@/services/constants/constants";
@@ -43,7 +42,11 @@ export async function findUserByEmailAction(email: string) {
       };
     }
   } catch (e) {
-    return { status: statusText.error, message: strings.ServerError, data: e };
+    return {
+      status: statusText.error,
+      message: strings.ServerError,
+      data: JSON.stringify(e),
+    };
   }
 }
 

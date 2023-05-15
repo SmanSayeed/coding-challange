@@ -6,6 +6,9 @@ const nextConfig = {
         serverComponentsExternalPackages:["mongoose"],
         serverActions:true,
     },
+    images: {
+        domains: ['*',"avatars.githubusercontent.com"],
+      },
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
       }
