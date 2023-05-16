@@ -8,7 +8,10 @@ export default function Home() {
     <>
       {/* <main className="flex min-h-screen flex-col items-center justify-between "> */}
       <Hero />
-      <div className="challeng-category-cards w-full flex flex-wrap justify-center items-center gap-5 mt-5 ">
+      <div
+        className="challeng-category-cards w-full flex flex-wrap justify-center items-center gap-5 mt-5 "
+        onClick={() => alert("Under development mode, please try again later.")}
+      >
         <ChallengeCategoryCard
           title="Static Design"
           details="All static design problems will be here"
