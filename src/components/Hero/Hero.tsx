@@ -18,7 +18,7 @@ const Hero = (props: Props) => {
                 Are you ready for accepting coding challanges?
               </p>
         </div>
-        <div className=" p-4 ">
+        {/* <div className=" p-4 ">
           <ul>
             <li>First login with your github account</li>
             <li>Accept a challenge with your skill level</li>
@@ -26,7 +26,7 @@ const Hero = (props: Props) => {
             <li>Check leader board</li>
             <li>Share your submission to get review</li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </>
   );

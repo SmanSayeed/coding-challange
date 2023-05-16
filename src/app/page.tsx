@@ -1,15 +1,29 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
+import ChallengeCategoryCard from "@/components/Cards/ChallengeCategoryCard/ChallengeCategoryCard";
 import Hero from "@/components/Hero/Hero";
-import { useAuth } from "@/lib/firebase/auth";
-import { useEffect, useState } from "react";
 export default function Home() {
   return (
     <>
       {/* <main className="flex min-h-screen flex-col items-center justify-between "> */}
       <Hero />
-      <div className="card-group">
+      <div className="challeng-category-cards w-full flex flex-wrap justify-center items-center gap-5 mt-5 ">
+        <ChallengeCategoryCard
+          title="Static Design"
+          details="All static design problems will be here"
+          count={5}
+          bg="bg-green-600"
+        />
+        <ChallengeCategoryCard
+          title="Interactive Design"
+          details="All static design problems will be here"
+          count={5}
+          bg="bg-orange-600"
+          titleColor="text-orange-600"
+        />
+      </div>
+      {/* <div className="card-group">
         <div className="card">
           <h1 className="title">Static design problem</h1>
           <p className="details">
@@ -57,7 +71,7 @@ export default function Home() {
           </ul>
           <button className="card-btn">Accept challange!</button>
         </div>
-      </div>
+      </div> */}
       {/* </main> */}
     </>
   );
