@@ -4,50 +4,21 @@ import { useAuth } from "@/lib/firebase/auth";
 import { alertTime, siteName } from "@/services/constants/constants";
 import allicons from "@/services/constants/icon-constants";
 import { useEffect, useState } from "react";
+import Alert from "../Alert/Alert";
 import Github from "../Github/Github";
+import Loader from "../Loader/Loader";
 import Logout from "../Logout/Logout";
 import MobileSidebar from "../Sidebar/MobileSidebar";
-import {
-  createUserAction,
-  findUserByEmailAction,
-} from "@/app/actions/_userActions";
-import Loader from "../Loader/Loader";
-import Alert from "../Alert/Alert";
-import { resetUser,addUserRedux } from "@/redux/slices/userSlice";
-// import { resetUser, } from "@/redux/features/usersSlice";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-
 type Props = {};
 const Header = (props: Props) => {
   const { authUser, isLoading } = useAuth();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [userData, setUserData] = useState(authUser);
+  const [userData, setUserData] = useState<any>(null);
   const [showAlert, setShowAlert] = useState(false);
-
-  const userReducerData = useAppSelector((state) => state.userReducer);
-  // const dispatch = useAppDispatch();
-
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
-  /*
-  async function addUser(data: {}) {
-    await createUserAction(data).then((res: any) => {
-      console.log("user created res = ", res);
-    });
-  }
-  const checkUser = async (email: string) => {
-    // return await  findUserByEmailAction(email)
-    let user: any;
-    await findUserByEmailAction(email).then((resolved) => {
-      console.log("printing resolved...");
-      console.log("resolved result = ", resolved);
-      user = resolved.user;
-      setUserData(user);
-    });
-  };
-  */
   const handleSuccess = () => {
     setShowAlert(true);
     setTimeout(() => {
@@ -56,31 +27,14 @@ const Header = (props: Props) => {
   };
 
   useEffect(() => {
-    console.log("user", authUser);
+    console.log("authUser = ", authUser);
     if (!isLoading && authUser) {
-      console.log("User reducer = ",userReducerData);
-      // checkUser(authUser.email);
       setIsLoggedIn(true);
       handleSuccess();
     } else {
       setIsLoggedIn(false);
     }
-  }, [isLoading, authUser]);
-
-  // useEffect(() => {
-  //   try {
-  //     console.log("isUserExist", userData);
-  //     if (!userData) {
-  //       addUser(authUser);
-        
-  //     } else {
-  //       console.log("welcome back");
-  //     }
-  //   } catch (err: any) {
-  //     console.log("errorroooo = ", err);
-  //   }
-  // }, [userData]);
-
+  }, [authUser]);
 
   if (isLoading)
     return (
@@ -91,7 +45,7 @@ const Header = (props: Props) => {
   return (
     <>
       {showAlert && <Alert message="Login Success!" variant="success" />}
-      <header className="overflow-hidden w-full text-white bg-dark border-b border-1 border-green-500  h-20 shrink-0 flex justify-between items-center py-4 px-5 ">
+      <header className="w-full text-white bg-dark border-b border-1 border-green-500  h-20 shrink-0 flex justify-between items-center py-4 px-5 ">
         <div className=" flex justify-start items-center text-xl font-bold text-green-500">
           {siteName}
         </div>

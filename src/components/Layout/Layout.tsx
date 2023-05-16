@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <html lang="en">
-        <body>
+        <body   suppressHydrationWarning={true} >
         <div className="flex flex-col h-screen">
           <Header />
           <div className="flex flex-row h-[calc(100vh-5rem)]">
