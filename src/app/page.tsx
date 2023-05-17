@@ -3,28 +3,48 @@
 
 import ChallengeCategoryCard from "@/components/Cards/ChallengeCategoryCard/ChallengeCategoryCard";
 import Hero from "@/components/Hero/Hero";
+import { ProblemCategoryItem } from "@/services/constants/interfaces";
+import { problemCategories } from "@/services/constants/problems";
+import React from "react";
 export default function Home() {
   return (
     <>
       {/* <main className="flex min-h-screen flex-col items-center justify-between "> */}
       <Hero />
-      <div
-        className="challeng-category-cards w-full flex flex-wrap justify-center items-center gap-5 mt-5 "
-        onClick={() => alert("Under development mode, please try again later.")}
-      >
-        <ChallengeCategoryCard
+      <div className="challeng-category-cards w-full flex flex-wrap justify-center items-center gap-5 mt-5 ">
+        {problemCategories.map((item: ProblemCategoryItem, index: number) => {
+          return (
+            <React.Fragment key={index}>
+              {item.enableStatus && (
+                <ChallengeCategoryCard
+                  title={item.title}
+                  details={item.details}
+                  count={5}
+                  bg={item.bg}
+                  titleColor={item.titleColor}
+                  categoryId={item.categoryId}
+                />
+              )}
+            </React.Fragment>
+          );
+        })}
+
+        {/*
+        
+         <ChallengeCategoryCard
           title="Static Design"
           details="All static design problems will be here"
           count={5}
           bg="bg-green-600"
         />
+
         <ChallengeCategoryCard
           title="Interactive Design"
           details="All static design problems will be here"
           count={5}
           bg="bg-orange-600"
           titleColor="text-orange-600"
-        />
+        /> */}
       </div>
       {/* <div className="card-group">
         <div className="card">

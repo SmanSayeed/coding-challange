@@ -3,6 +3,7 @@
 import { useAuth } from "@/lib/firebase/auth";
 import { alertTime, siteName } from "@/services/constants/constants";
 import allicons from "@/services/constants/icon-constants";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Alert from "../Alert/Alert";
 import Github from "../Github/Github";
@@ -46,11 +47,11 @@ const Header = (props: Props) => {
     <>
       {showAlert && <Alert message="Login Success!" variant="success" />}
       <header className="w-full text-white bg-dark border-b border-1 border-green-500  h-20 shrink-0 flex justify-between items-center py-4 px-5 ">
-        <div className=" flex flex-col justify-start items-start text-xl font-bold text-green-500">
+        <Link href="/" className=" flex flex-col justify-start items-start text-xl font-bold text-green-500">
           {siteName}
           <br />
           <span className="text-[14px]">V - 0.0 (alpha)</span>
-        </div>
+        </Link>
         <div className="flex gap-2 justify-center items-center">
           {isLoggedIn ? <Logout /> : <Github />}
           <div
