@@ -46,8 +46,10 @@ const Header = (props: Props) => {
     <>
       {showAlert && <Alert message="Login Success!" variant="success" />}
       <header className="w-full text-white bg-dark border-b border-1 border-green-500  h-20 shrink-0 flex justify-between items-center py-4 px-5 ">
-        <div className=" flex justify-start items-center text-xl font-bold text-green-500">
+        <div className=" flex flex-col justify-start items-start text-xl font-bold text-green-500">
           {siteName}
+          <br />
+          <span className="text-[14px]">V - 0.0 (alpha)</span>
         </div>
         <div className="flex gap-2 justify-center items-center">
           {isLoggedIn ? <Logout /> : <Github />}

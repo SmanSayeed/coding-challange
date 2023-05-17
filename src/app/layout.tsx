@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout/Layout";
 import { AuthUserProvider } from "@/lib/firebase/auth";
+import { Providers } from "@/redux/provider";
 import { siteName, siteTagline } from "@/services/constants/constants";
 import { Inter } from "next/font/google";
 import "./globals.scss";
@@ -17,8 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <AuthUserProvider>
-      <Layout>{children}</Layout>
-    </AuthUserProvider>
+    <Providers>
+      <AuthUserProvider>
+        <Layout>{children}</Layout>
+      </AuthUserProvider>
+    </Providers>
   );
 }

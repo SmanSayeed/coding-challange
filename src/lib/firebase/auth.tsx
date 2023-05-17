@@ -4,15 +4,20 @@ import {
   createUserAction,
   findUserByEmailAction,
 } from "@/app/actions/_userActions";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { addUserRedux, resetUser } from "@/redux/slices/userSlice";
 import { statusText } from "@/services/constants/constants";
 import { onAuthStateChanged, signOut as authSignOut } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { auth } from "./firebase";
 const AuthUserContext = createContext({
   authUser: null,
   isLoading: true,
 });
 export default function useFirebaseAuth(): any {
+  const dispatch = useAppDispatch();
+  const userState = useAppSelector((state)=>state.userReducer);
   const [authUser, setAuthUser] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -75,6 +80,7 @@ export default function useFirebaseAuth(): any {
   const signOut = (): any => {
     authSignOut(auth).then(() => {
       clear();
+      dispatch(resetUser())
     });
   };
   useEffect(() => {
@@ -90,6 +96,7 @@ export default function useFirebaseAuth(): any {
       } else {
         console.log("welcome back");
       }
+      dispatch(addUserRedux(authUser))
     }
   }, [userData]);
 
