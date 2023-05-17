@@ -21,7 +21,7 @@ const ChallengeCategoryCard = ({
   return (
     <>
       <div
-        className={`min-h-[30vh] w-[30%] bg-blue-200 ${bg} shadow-lg rounded-md flex flex-col justify-between items-center`}
+        className={`min-h-[30vh] w-[80%] lg:w-[30%] bg-blue-200 ${bg} shadow-lg rounded-md flex flex-col justify-between items-center`}
       >
         <div
           className={`card-header w-full text-center bg-black text-green-500  font-bold rounded-t-md py-3 ${titleColor}`}

@@ -11,7 +11,7 @@ export default function Home() {
     <>
       {/* <main className="flex min-h-screen flex-col items-center justify-between "> */}
       <Hero />
-      <div className="challeng-category-cards w-full flex flex-wrap justify-center items-center gap-5 mt-5 ">
+      <div className="challeng-category-cards w-full flex flex-wrap justify-center items-center gap-5 mt-5 flex-col lg:flex-row ">
         {problemCategories.map((item: ProblemCategoryItem, index: number) => {
           return (
             <React.Fragment key={index}>
