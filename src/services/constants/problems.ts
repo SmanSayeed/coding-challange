@@ -30,6 +30,27 @@ export const problemCategories: ProblemCategoryItem[] = [
 export const problems: ProblemItem[] = [
   {
     categoryId: "static",
+    problemId: "4",
+    title: "Figma to landing page",
+    tags: ["html", "css", "flexbox", "bootstrap", "tailwind", "any"],
+    level: "beginner",
+    target: [
+      "Learning Figma to web desgin",
+      "Practicing pixel perfect web design",
+    ],
+    description: `
+    <p>
+      Design a pixel perfect website from the following figma. 
+      <br/>
+      Consider only desktop view
+      <br/>
+      Figma Link: <a className="problem-link" href="https://www.figma.com/file/pMMw5PBGIa64Hb06tl0vk9/Tripma---Flight-booking-web-app-(Community)?type=design&node-id=740%3A19142&t=wOkymWNwktm5NTfW-1" target="_blank">Click me to open</a>
+      <br/>
+    </p>
+    `,
+  },
+  {
+    categoryId: "static",
     problemId: "1",
     title: "Responsive Header",
     tags: ["html", "css", "flexbox", "media-query"],

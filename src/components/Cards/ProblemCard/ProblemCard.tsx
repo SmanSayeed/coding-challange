@@ -1,5 +1,6 @@
 import { ProblemItem } from "@/services/constants/interfaces";
 import ReactHtmlParser from "html-react-parser";
+import Link from "next/link";
 
 type Props = {
   problemDetails: ProblemItem;
@@ -10,15 +11,18 @@ const ProblemCard = ({ problemDetails }: Props) => {
     problemDetails;
   return (
     <div className="w-full min-h-[200px] border-md bg-white border-2 border-green-500 shadow-lg flex flex-col justify-between rounded-md mt-10">
-      <div className=" w-30 bg-gray-900 flex flex-col justify-center items-center text-green-500 p-1">
+      <Link
+        href={`/challenges/task/${problemId}`}
+        className=" w-30 bg-gray-900 flex flex-col justify-center items-center text-green-500 p-1"
+      >
         <p className="">Task id # {problemId}</p>
         <p className="text-[30px] font-bold">{title}</p>
         <p className="">{level} level</p>
-      </div>
+      </Link>
       <div className=" flex-grow flex flex-col md:flex-row w-full">
         <div className="target bg-orange-400 lg:w-[50%] sm:w-full p-2">
           <p className="font-bold">Task goal</p>
-          <ul className="my-5" >
+          <ul className="my-5">
             {target.map((item: string, index: number) => (
               <li className="my-5" key={index}>
                 {item}

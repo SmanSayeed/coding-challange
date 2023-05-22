@@ -15,10 +15,10 @@ const SideMenu = (props: Props) => {
       </Link>
         
       </div>
-        <div className="menu-item">Challanges</div>
-        <div className="menu-item">Resources</div>
-        <div className="menu-item">Articles</div>
-        <div className="menu-item">Link</div>
+        <Link className="menu-item" href="/">Challanges</Link>
+        {/* <link className="menu-item" href="/">Resources</link>
+        <link className="menu-item" href="/">Articles</link>
+        <link className="menu-item" href="/">Link</link> */}
       </div>
     </>
   );
