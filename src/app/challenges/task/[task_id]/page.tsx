@@ -14,7 +14,7 @@ const Page = ({ params: { task_id } }: Props) => {
   return (
     <div>
       <div className="bg-black w-full p-3 flex justify-center items-center text-white text-[20px]">
-        <p>{task_id} Problems</p>
+        <p>Task no: {task_id}</p>
       </div>
 
       <div className="card-list flex flex-col gap-3 p-3  ">
