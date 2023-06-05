@@ -3,10 +3,9 @@ import AdminLogin from "@/components/Admin/AdminLogin/AdminLogin";
 type Props = {};
 
 const page = (props: Props) => {
- 
   return (
-    <div >
-     <AdminLogin/>
+    <div>
+      <AdminLogin />
     </div>
   );
 };
